@@ -26,7 +26,7 @@ def control_params_callback(current_control):
 
 if __name__ == '__main__':
 	# initialize the node
-	rospy.init_node('pos_converter', anonymous = True)
+	rospy.init_node('control_node', anonymous = True)
 	# set a 10Hz freaquency for this node
 	loop_rate = rospy.Rate(10)
 	# add a subscriber to it to recieve the position information
