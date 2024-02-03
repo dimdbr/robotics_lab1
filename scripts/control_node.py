@@ -17,11 +17,14 @@ turtle_control_msg = Turtlecontrol()
 def pose_callback(current_pose):
 	global pos_msg
 	pos_msg = current_pose
+	# display current x-axis position 
 	rospy.loginfo("x is %.02f", pos_msg.x)
 
 def control_params_callback(current_control):
 	global turtle_control_msg
+	# record control gain 
 	turtle_control_msg.kp = current_control.kp
+	# record desired position on x-axis
 	turtle_control_msg.xd = current_control.xd
 
 if __name__ == '__main__':
